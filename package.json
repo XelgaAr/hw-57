@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-hw57",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "dev": "node --watch src/server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:native": "node --test tests/*.test.mjs",
+    "test:browser": "node scripts/browser-check.mjs",
+    "test:report": "node scripts/report.mjs",
+    "test:report:native": "node scripts/report.mjs --native",
+    "check": "node scripts/check.mjs && npm run test:native && npm test && npm run build"
+  },
+  "devDependencies": {
+    "vitest": "4.1.12",
+    "@vitest/coverage-v8": "4.1.12",
+    "playwright": "^1.57.0"
+  }
+}
